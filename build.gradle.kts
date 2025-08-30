@@ -9,7 +9,7 @@ plugins {
 }
 
 group = "moe.sota"
-version = "0.9.9"
+version = "0.9.10"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_17

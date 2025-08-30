@@ -1,10 +1,13 @@
 package moe.sota.decompiler
 
-import com.formdev.flatlaf.FlatDarkLaf
+import com.formdev.flatlaf.FlatDarculaLaf
+import com.formdev.flatlaf.FlatIntelliJLaf
 import com.formdev.flatlaf.FlatLaf
+import com.formdev.flatlaf.FlatLightLaf
 import com.formdev.flatlaf.extras.FlatInspector
 import com.formdev.flatlaf.fonts.inter.FlatInterFont
 import com.formdev.flatlaf.fonts.jetbrains_mono.FlatJetBrainsMonoFont
+import com.formdev.flatlaf.themes.FlatMacDarkLaf
 import com.formdev.flatlaf.util.SystemInfo
 import moe.sota.decompiler.controllers.WindowController
 import moe.sota.decompiler.services.LoaderService
@@ -21,7 +24,7 @@ fun main(args: Array<String>) {
     FlatJetBrainsMonoFont.install()
     FlatLaf.setPreferredFontFamily(FlatInterFont.FAMILY)
     FlatLaf.registerCustomDefaultsSource("themes")
-    FlatDarkLaf.setup()
+    FlatDarculaLaf.setup()
     FlatInspector.install("${if (SystemInfo.isMacOS) "meta" else "ctrl"} shift I")
 
     WindowController.show()

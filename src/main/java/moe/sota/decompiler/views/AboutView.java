@@ -71,7 +71,7 @@ public class AboutView extends JDialog {
         content.add(version, "wrap");
 
         copyright = new FlatLabel();
-        copyright.setText(String.format("\u00a9 2022 - %s S\u014Dta", Year.now().getValue()));
+        copyright.setText(String.format("\u00a9 2022 - %s adapted by evilale 💖 powered by S\u014Dta", Year.now().getValue()));
         content.add(copyright, "wrap");
 
         vm = new JPanel();
@@ -117,7 +117,7 @@ public class AboutView extends JDialog {
     @SneakyThrows
     private void onGitHubAction(ActionEvent event) {
         if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE))
-            Desktop.getDesktop().browse(new URI("https://github.com/sotasan/decompiler"));
+            Desktop.getDesktop().browse(new URI("https://github.com/0evilale/decompiler"));
     }
 
     private void onOkAction(ActionEvent event) {

@@ -32,6 +32,7 @@ repositories {
 
 dependencies {
     implementation("com.fifesoft:rsyntaxtextarea:3.5.4")
+    implementation("com.fifesoft:rstaui:3.3.1")
     implementation("com.formdev:flatlaf:3.5.4")
     implementation("com.formdev:flatlaf-extras:3.5.4")
     implementation("com.formdev:flatlaf-fonts-inter:4.0")

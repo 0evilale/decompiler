@@ -63,6 +63,25 @@ public class TabsController extends BaseController<TabsView> implements ActionLi
         }
     }
 
+    public void addTabAndScrollTo(FileModel fileModel, int line) {
+        TabController controller = getController(fileModel);
+        if (controller == null) {
+            TabController newController = new TabController(fileModel);
+            ImageIcon icon = new ImageIcon(fileModel.getIcon());
+            Component component = newController.getComponent();
+            newController.updateAsync().thenRun(() -> {
+                if (getController(fileModel) == null) {
+                    getView().addTab(fileModel.getName(), icon, component);
+                    getView().setSelectedComponent(component);
+                }
+                newController.getView().scrollToLine(line);
+            });
+        } else {
+            getView().setSelectedComponent(controller.getComponent());
+            controller.getView().scrollToLine(line);
+        }
+    }
+
     public void closeTab() {
         getView().removeTabAt(getView().getSelectedIndex());
     }

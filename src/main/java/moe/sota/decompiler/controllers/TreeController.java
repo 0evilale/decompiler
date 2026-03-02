@@ -17,11 +17,15 @@ public class TreeController extends BaseController<TreeView> {
     @Getter
     private static final TreeController INSTANCE = new TreeController();
 
+    @Getter
+    private ArchiveModel archiveModel;
+
     private TreeController() {
         super(new TreeView());
     }
 
     public void setArchive(ArchiveModel archiveModel) {
+        this.archiveModel = archiveModel;
         DefaultTreeModel treeModel = (DefaultTreeModel) getView().getTree().getModel();
         DefaultMutableTreeNode rootNode = (DefaultMutableTreeNode) treeModel.getRoot();
         DefaultMutableTreeNode treeNode = createTreeNode(archiveModel);

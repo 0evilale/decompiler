@@ -5,3 +5,7 @@ build
 .DS_Store
 *~lock~
 .vscode
+agent
+assets
+bin
+gradle
